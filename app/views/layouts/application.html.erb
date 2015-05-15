@@ -8,10 +8,24 @@
 </head>
 <body>
 
+<!-- flash -->
 <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+        <p class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= notice %>
+        </p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-warning alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= alert %>
+        </p>
+    <% end %>
+</div>
 
+<!-- content -->
+<div class="container">
     <%= yield %>
 </div>
 
