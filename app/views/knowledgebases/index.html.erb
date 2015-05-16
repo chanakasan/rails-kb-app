@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Knowledgebases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @knowledgebases.each do |knowledgebase| %>
+      <tr>
+        <td><%= knowledgebase.name %></td>
+        <td><%= link_to 'Show', knowledgebase %></td>
+        <td><%= link_to 'Edit', edit_knowledgebase_path(knowledgebase) %></td>
+        <td><%= link_to 'Destroy', knowledgebase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Knowledgebase', new_knowledgebase_path %>
